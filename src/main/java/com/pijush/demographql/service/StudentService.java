@@ -34,4 +34,20 @@ public class StudentService {
     public Student addStudent(Student student){
         return studentRepository.save(student);
     }
+
+    public Student updateFirstname(int id, String firstName) {
+        Student student = studentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Student does not exist!")
+        );
+        student.setFirstName(firstName);
+        return studentRepository.save(student);
+    }
+
+    public Student updateLastname(int id, String lastName) {
+        Student student = studentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Student does not exist!")
+        );
+        student.setFirstName(lastName);
+        return studentRepository.save(student);
+    }
 }

@@ -5,6 +5,7 @@ type Query{
 }
 
 type Student{
+    id:ID,
     firstName:String,
     lastName:String,
     email: String
@@ -16,6 +17,8 @@ input newStudent {
     email: String
 }
 type Mutation{
-    updateStudent(id:ID,email:String):Student,
+    updateEmail(id:ID,email:String):Student,
+    updateFirstname(id:ID, firstName:String): Student,
+    updateLastname(id:ID, lastName:String): Student,
     addStudent(student:newStudent):Student
 }

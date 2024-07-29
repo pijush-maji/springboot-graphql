@@ -33,10 +33,20 @@ public class Query {
         return studentService.getByFirstName(firstName);
     }
 
-    public 
+
     @MutationMapping
-    public Student updateemail(@Argument int id,@Argument String email){
+    public Student updateEmail(@Argument int id,@Argument String email){
         return studentService.updateEmail(id,email);
+    }
+
+    @MutationMapping
+    public Student updateFirstname(@Argument int id,@Argument String firstName){
+        return studentService.updateFirstname(id,firstName);
+    }
+
+    @MutationMapping
+    public Student updateLastname(@Argument int id,@Argument String lastName){
+        return studentService.updateLastname(id,lastName);
     }
 
     @MutationMapping
